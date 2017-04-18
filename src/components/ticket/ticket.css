@@ -1,0 +1,68 @@
+.ticket {
+	position: relative;
+	margin-bottom: 24px;
+
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0 0 3px 0 hsla(0,0%,62%,.5);
+	}
+
+	.ticket::after {
+	    clear: both;
+	    content: ".";
+	    display: block;
+	    height: 0;
+	    overflow: hidden;
+	}
+
+	.ticket__aside {
+		display: block;
+		position: relative;
+		float: left;
+		width: 170px;
+		min-width: 170px;
+		padding: 24px;
+		border-right: 1px solid #e4e7e8;
+	}
+
+	.ticket__content {
+		display: block;
+		position: relative;
+		float: right;
+		width: 519px;
+		padding: 24px;
+		box-sizing: border-box;
+	}
+	.ticket__content::after {
+	    clear: both;
+	}
+
+	.ticket__airlineLogoWrapper {
+		width: 100%;
+		max-height: 60px;
+		text-align: center;
+		margin-bottom: 24px;
+	}
+
+	.ticket__airlineLogo {
+		max-width: 100%;
+		max-height: 60px;
+		padding: 8px 24px;
+		box-sizing: border-box;
+	}
+
+@media (max-width: 758px) {
+  .ticket__aside {
+    width: 100%;
+    float: right;
+    box-sizing: border-box;
+  }
+  .ticket__content {
+    width: 100%;
+    float: left;
+    padding-top: 0;
+  }
+  .flightInfo__path {
+    display: none;
+  }
+}

@@ -1,0 +1,66 @@
+.app {
+	width: 1000px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 150px;
+  padding: 20px;
+
+  color: white;
+  text-align: center;
+  }
+  .header__logo {
+    height: 80px;
+  }
+
+.main {
+  width: 100%;
+  margin-top: 24px;
+  }
+  .main::after {
+      clear: both;
+      content: ".";
+      display: block;
+      height: 0;
+      overflow: hidden;
+  }
+
+.filters {
+  width: 238px;
+  float: left;
+
+  margin-right: 24px;
+}
+
+.content {
+  width: 738px;
+  float: left;
+}
+
+@media (max-width: 1024px) {
+  .app {
+    width: 738px;
+  }
+  .filters {
+    width: 738px;
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 758px) {
+  .app {
+    width: 320px;
+  }
+  .header {
+    display: none;
+  }
+  .content {
+    width: 320px;
+  }
+  .filters {
+    width: 320px;
+    margin-right: 0;
+  }
+}

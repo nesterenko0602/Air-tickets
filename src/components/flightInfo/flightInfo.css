@@ -1,0 +1,63 @@
+.flightInfo {
+	position: relative;
+	width: 100%;
+	}
+
+	.flightInfo__arrival {
+		float: right;
+		text-align: right;
+	}
+	.flightInfo__departure {
+		float: left;
+	}
+	.flightInfo__arrival, .flightInfo__departure {
+		width: 50%;
+	}
+
+	.flightInfo__airport, .flightInfo__date {
+		color: #8b9497;
+		font-size: 12px;
+		line-height: 1.6;
+	}
+
+	.flightInfo__time {
+		line-height: 1.5;
+		font-size: 32px;
+		font-family: "Tahoma";
+	}
+
+	.flightInfo__airport {
+		font-weight: bold;
+	}
+
+	.flightInfo__path {
+		position: absolute;
+		left: 110px;
+		width: 250px;
+
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 12px;
+		color: #8b9497;
+		}
+		.flightInfo__path::after {
+			position: absolute;
+			right: 0;
+			top: 15px;
+			width: 20px;
+			height: 20px;
+
+			content: ' ';
+			background-image: url('./assets/aeroplane.svg');
+			background-size: contain;
+		}
+		.flightInfo__path::before {
+			position: absolute;
+			left: 30px;
+			top: 25px;
+			width: 190px;
+			height: 1px;
+
+			content: ' ';
+			background-color: #a9b4b9;
+		}

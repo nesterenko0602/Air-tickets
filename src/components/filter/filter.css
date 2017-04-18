@@ -1,0 +1,17 @@
+.filter {
+	margin-bottom: 24px;
+	padding-bottom: 8px;
+
+	background: white;
+	border-radius: 5px;
+	box-shadow: 0 0 3px 0 hsla(0,0%,62%,.5);
+	}
+	.filter__header {
+		padding: 16px 24px;
+		margin: 0;
+
+	    font-size: 12px;
+	    font-weight: normal;
+	    text-transform: uppercase;
+	    color: #4a4a4a;
+	}

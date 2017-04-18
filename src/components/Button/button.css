@@ -1,0 +1,41 @@
+.button {
+	padding: 8px;
+
+	background: #333;
+	border: 0;
+	border-radius: 5px;
+	box-shadow: 0 1px 0 0 #333, 0 2px 1px 0 rgba(0,0,0,.1);
+
+	color: white;
+	font-size: 18px;
+	text-align: center;
+	line-height: 1.5;
+	cursor: pointer;
+	}
+	.button:hover {
+		background: #555;
+		border-bottom-color: transparent;
+		transition: all .3s;
+	}
+
+	.button__text {
+		display: block;
+	}
+
+	.button__subtext {
+		font-weight: 100;
+		display: block;
+		font-size: 85%;
+	}
+
+	.button--primary {
+		background: #ff6d00;
+		box-shadow: 0 1px 0 0 #d64d08, 0 2px 1px 0 rgba(0,0,0,.1);
+		}
+		.button--primary:hover {
+		    background-color: #faa760;
+		}
+
+	.button--fullwidth {
+		width: 100%;
+	}
