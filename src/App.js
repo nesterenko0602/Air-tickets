@@ -9,27 +9,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    stops: {
-      all: {
-        checked: true,
-        label:'Все'},
-      wo: {
-        checked: true,
-        label:'Без пересадок'
-      },
-      one: {
-        checked: true,
-        label:'1 пересадка'
-      },
-      two: {
-        checked: true,
-        label:'2 пересадки'
-      },
-      three: {
-        checked: true,
-        label:'3 пересадки'
-      }
-    },
+    stops: [0, 1, 2, 3],
     tickets: [],
     loading: true
   }
@@ -51,26 +31,17 @@ class App extends Component {
   handleFilterChange = ({term, checked, only}) => {
     this.setState( (prevState) => {
       const newState = Object.assign({}, prevState);
-      newState.stops[term].checked = checked;
 
-      if (term === 'all' || only) {
-        Object.keys(newState.stops).forEach(key => {
-          newState.stops[key].checked = only ? (key === term) : checked;
-        });
-      } else if (!checked) {
-        newState.stops.all.checked = false;
-      } else if (!newState.stops.all.checked) {
-        newState.stops.all.checked = Object.keys(newState.stops)
-          .reduce( (prev, curr) => {
-            return curr === 'all'
-              ? true
-              : prev && newState.stops[curr].checked;
-          }, true);
+      if (only) {
+        newState.stops = [term];
+      } else if (term === 'all') {
+        newState.stops = checked ? [0, 1, 2, 3] : [];
+      } else {
+        checked ? newState.stops.push(term) : newState.stops.splice(newState.stops.indexOf(term), 1);
       }
       return newState;
     });
   }
-
   render() {
     return (
       <div className="app">
@@ -78,7 +49,6 @@ class App extends Component {
         <header className="header">
           <img src={logo} className="header__logo" alt="Aviasales logo" />
         </header>
-
         <main className="main">
           <aside className="filters">
             <Filter
@@ -86,11 +56,13 @@ class App extends Component {
               stops={this.state.stops}
               />
           </aside>
+
           <section className="content">
             { this.state.loading
               ? <Loader />
               : <Tickets
                 tickets={this.state.tickets}
+
                 stops={this.state.stops}
                 />
             }
@@ -101,5 +73,5 @@ class App extends Component {
     );
   }
 }
-
 export default App;
+

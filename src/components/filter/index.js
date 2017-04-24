@@ -4,11 +4,34 @@ import Checkbox from '../Checkbox';
 import './filter.css';
 
 export default class Filter extends Component {
-  createCheckboxes () {
-    return Object.keys(this.props.stops).map( (term) => {
+  getLabel(term) {
+    switch (term) {
+      case 'all':
+        return 'Все';
+      case 0:
+        return 'Без пересадок';
+      case 1:
+        return '1 пересадка';
+      default:
+        return `${term} пересадки`;
+    }
+  }
+
+  getCheckedStatus(term) {
+    switch (term) {
+      case 'all':
+        return !!(this.props.stops.length === 4);
+      default:
+        return !!~this.props.stops.indexOf(Number(term));
+    }
+  }
+
+  createCheckboxes() {
+    return ['all', 0, 1, 2, 3].map( (term) => {
       return this.createCheckbox({
         term,
-        ...this.props.stops[term]
+        label: this.getLabel(term),
+        checked: this.getCheckedStatus(term)
       });
     });
   }
