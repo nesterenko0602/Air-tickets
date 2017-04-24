@@ -7,29 +7,14 @@ export default class Ticket extends Component {
   render() {
     const flightData = (() => {
       const {
-        origin,
-        origin_name,
-        destination,
-        destination_name,
-        departure_date,
-        departure_time,
-        arrival_date,
-        arrival_time,
-        stops
+        _carrier,
+        _price,
+        ...flightInfoData
       } = this.props.ticket;
 
-      return {
-        origin,
-        origin_name,
-        destination,
-        destination_name,
-        departure_date,
-        departure_time,
-        arrival_date,
-        arrival_time,
-        stops
-      };
+      return flightInfoData;
     })();
+
     const price = `за ${this.props.ticket.price} Р.`;
     
 
