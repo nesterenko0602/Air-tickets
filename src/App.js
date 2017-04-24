@@ -4,7 +4,6 @@ import Filter from './components/filter';
 import Tickets from './components/tickets';
 import Loader from './components/Loader';
 
-import ticketsJSON from './tickets.json';
 import logo from './assets/images/logo.png';
 import './App.css';
 
@@ -37,11 +36,8 @@ class App extends Component {
 
   componentDidMount() {
     // Async load, #task5
-    new Promise( (resolve, reject) => {
-      setTimeout(()=> {
-        resolve(ticketsJSON);
-      }, 3000);
-    })
+    fetch(`/tickets.json`)
+    .then(res => res.json())
     .then(result => {
       this.setState((prevState) => {
         return {
@@ -49,7 +45,6 @@ class App extends Component {
           tickets: result.tickets.sort( (ticketA, ticketB) => ticketA.price - ticketB.price )
         };
       });
-
     });
   }
 
