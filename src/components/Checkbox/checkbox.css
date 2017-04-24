@@ -78,7 +78,7 @@
 	    width: 9px;
 	    height: 7px;
 	    
-	    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgOSA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xLjUgMy41bDIgMiA0LTQiIHN0cm9rZT0iIzBDQjJFMSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=) no-repeat;
+	    background: url('./assets/checked.svg') no-repeat;
 	    opacity: 0;
 	    transform: translateY(-5px);
 	    transition: inherit;
