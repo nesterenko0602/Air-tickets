@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import './flightInfo.css';
 
@@ -34,19 +35,31 @@ export default class FlightInfo extends Component {
     return (
       <div className="flightInfo">
         <div className="flightInfo__departure">
-          <div className="flightInfo__time">{this.props.data.departure_time}</div>
-          <div className="flightInfo__airport">{this.props.data.origin}, {this.props.data.origin_name}</div>
-          <div className="flightInfo__date">{this.formatDate(this.props.data.departure_date)}</div>
+          <div className="flightInfo__time">{this.props.departure_time}</div>
+          <div className="flightInfo__airport">{this.props.origin}, {this.props.origin_name}</div>
+          <div className="flightInfo__date">{this.formatDate(this.props.departure_date)}</div>
         </div>
         <div className="flightInfo__path">
-          {this.countOfStops(this.props.data.stops)}
+          {this.countOfStops(this.props.stops)}
         </div>
         <div className="flightInfo__arrival">
-          <div className="flightInfo__time">{this.props.data.arrival_time}</div>
-          <div className="flightInfo__airport">{this.props.data.destination}, {this.props.data.destination_name}</div>
-          <div className="flightInfo__date">{this.formatDate(this.props.data.arrival_date)}</div>
+          <div className="flightInfo__time">{this.props.arrival_time}</div>
+          <div className="flightInfo__airport">{this.props.destination}, {this.props.destination_name}</div>
+          <div className="flightInfo__date">{this.formatDate(this.props.arrival_date)}</div>
         </div>
       </div>
     );
   }
+}
+
+FlightInfo.propTypes = {
+  origin: PropTypes.string.isRequired,
+  origin_name: PropTypes.string.isRequired,
+  destination: PropTypes.string.isRequired,
+  destination_name: PropTypes.string.isRequired,
+  departure_date: PropTypes.string.isRequired,
+  departure_time: PropTypes.string.isRequired,
+  arrival_date: PropTypes.string.isRequired,
+  arrival_time: PropTypes.string.isRequired,
+  stops: PropTypes.number.isRequired,
 }

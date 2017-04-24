@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import './checkbox.css';
 
 class Checkbox extends Component {
@@ -44,3 +46,14 @@ class Checkbox extends Component {
 }
 
 export default Checkbox;
+
+Checkbox.propTypes = {
+  label: PropTypes.string.isRequired,
+  term: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
+  checked: PropTypes.bool.isRequired,
+  withOnly: PropTypes.bool.isRequired,
+  onCheckboxChange: PropTypes.func.isRequired,
+}

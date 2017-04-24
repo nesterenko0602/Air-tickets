@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Ticket from '../ticket';
 
@@ -12,4 +13,8 @@ export default class Tickets extends Component {
       </div>
     );
   }
+}
+
+Tickets.propTypes = {
+  tickets: PropTypes.array.isRequired,
 }

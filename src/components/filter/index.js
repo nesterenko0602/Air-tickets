@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import Checkbox from '../Checkbox';
 
 import './filter.css';
@@ -59,4 +61,10 @@ export default class Filter extends Component {
       </div>
     );
   }
+}
+
+
+Filter.propTypes = {
+  stops: PropTypes.array.isRequired,
+  onFilterChange: PropTypes.func.isRequired,
 }
