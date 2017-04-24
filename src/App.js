@@ -43,6 +43,10 @@ class App extends Component {
     });
   }
   render() {
+    const activeTickets = this.state.tickets.filter(ticket => {
+      return !!~this.state.stops.indexOf(ticket.stops);
+    })
+
     return (
       <div className="app">
         
@@ -61,8 +65,7 @@ class App extends Component {
             { this.state.loading
               ? <Loader />
               : <Tickets
-                tickets={this.state.tickets}
-
+                tickets={activeTickets}
                 stops={this.state.stops}
                 />
             }

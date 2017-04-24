@@ -7,9 +7,7 @@ export default class Tickets extends Component {
     return (
       <div>
         {this.props.tickets.map( (ticket, index) => {
-          const renderTicket = !!~this.props.stops.indexOf(ticket.stops);
-          
-          return renderTicket ? <Ticket key={index} ticket={ticket} /> : '';
+          return <Ticket key={index} ticket={ticket} />;
         })}
       </div>
     );
