@@ -52,7 +52,7 @@ class App extends Component {
         <main className="main">
           <aside className="filters">
             <Filter
-              handleFilterChange={this.handleFilterChange}
+              onFilterChange={this.handleFilterChange}
               stops={this.state.stops}
               />
           </aside>

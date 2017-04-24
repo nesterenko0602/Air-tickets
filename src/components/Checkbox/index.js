@@ -3,9 +3,9 @@ import './checkbox.css';
 
 class Checkbox extends Component {
   toggleCheckboxChange = (args) => {
-    const { handleCheckboxChange, term, checked } = this.props;
+    const { onCheckboxChange, term, checked } = this.props;
     
-    handleCheckboxChange({
+    onCheckboxChange({
       checked: !checked,
       term,
       only: args.only

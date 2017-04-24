@@ -44,7 +44,7 @@ export default class Filter extends Component {
         key={item.term}
         checked={item.checked}
         withOnly={item.term !== 'all'}
-        handleCheckboxChange={this.props.handleFilterChange}
+        onCheckboxChange={this.props.onFilterChange}
       />
     );
   }
