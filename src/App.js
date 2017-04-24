@@ -9,27 +9,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    stops: {
-      all: {
-        checked: true,
-        label:'Все'},
-      wo: {
-        checked: true,
-        label:'Без пересадок'
-      },
-      one: {
-        checked: true,
-        label:'1 пересадка'
-      },
-      two: {
-        checked: true,
-        label:'2 пересадки'
-      },
-      three: {
-        checked: true,
-        label:'3 пересадки'
-      }
-    },
+    stops: [0, 1, 2, 3],
     tickets: [],
     loading: true
   }
