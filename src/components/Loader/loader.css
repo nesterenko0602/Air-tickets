@@ -1,8 +1,6 @@
-.loader{
+.loader {
   text-align: center;
-}
-
-svg path,
-svg rect{
-  fill: #0cb2e1;
-}
+  }
+  .loader svg path, .loader svg rect {
+    fill: #0cb2e1;
+  }
